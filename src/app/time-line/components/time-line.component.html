@@ -1,0 +1,31 @@
+<div class="timeline">
+    <div class="table">
+        <div class="ers">
+            <div class="er" *ngFor="let year of declines;let i = index">
+            <p *ngIf="i==0" style="color: transparent;">hui</p>
+                <div class="round" style="height: 100%; border:none;" *ngFor="let y of declines[i].years">
+                </div>
+                <p>{{year.year}}</p>
+            </div>
+        </div>
+        <div class="dec" cdkDropListGroup>
+            <div class="decade" *ngFor="let year of declines">
+                <div class="round" *ngFor="let y of year.years"
+                cdkDropList
+                cdkDropListSortingDisabled
+                id="{{y.year}}"
+                [cdkDropListData]="y.spaces"
+                (cdkDropListDropped)="drop($event)">
+                <ng-container *ngFor="let ye of y.spaces;">
+                    <ng-container *ngIf="ye.spaces.length>0">
+                        <ng-container *ngFor="let space of ye.spaces">
+                            <br><br><br>
+                        </ng-container>
+                    </ng-container>
+                    <botton [data]="ye.item" cdkDragBoundary=".dec" cdkDragLockAxis="x" cdkDrag></botton>
+                </ng-container>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
