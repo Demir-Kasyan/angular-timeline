@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'timeline'`, () => {
+  it(`should have as title 'tl-npm'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('timeline');
+    expect(app.title).toEqual('tl-npm');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('timeline app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('tl-npm app is running!');
   });
 });
